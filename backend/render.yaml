@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: hjh-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node src/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: JWT_SECRET
+        value: your-super-secret-jwt-key-12345
+      - key: FRONTEND_URL
+        value: https://hjh-management-system.vercel.app
